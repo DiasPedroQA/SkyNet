@@ -1,0 +1,93 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Backend - Attach Docker",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+              "host": "localhost",
+              "port": 5678
+            }
+        },
+
+        // =========================
+        // FASTAPI (UVICORN)
+        // =========================
+        {
+            "name": "Backend - FastAPI",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "app.main:app",
+                "--reload",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "8000",
+            ],
+            "cwd": "${workspaceFolder}/backend",
+            "envFile": "${workspaceFolder}/backend/.env",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+
+        // =========================
+        // PYTEST - UNIT
+        // =========================
+        {
+            "name": "Backend - Unit Tests",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": ["backend/tests/unit", "-v", "--maxfail=1"],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+        },
+
+        // =========================
+        // PYTEST - INTEGRATION
+        // =========================
+        {
+            "name": "Backend - Integration Tests",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": ["backend/tests/integration", "-v", "--maxfail=1"],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+        },
+
+        // =========================
+        // REACT DEV SERVER
+        // =========================
+        {
+            "name": "Frontend - React Dev",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["start"],
+            "cwd": "${workspaceFolder}/frontend",
+            "console": "integratedTerminal",
+        },
+
+        // =========================
+        // REACT CHROME DEBUG
+        // =========================
+        {
+            "name": "Frontend - Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/frontend/src",
+        },
+    ],
+
+    "compounds": [
+        {
+            "name": "Full Stack",
+            "configurations": ["Backend - FastAPI", "Frontend - Chrome"],
+        },
+    ],
+}

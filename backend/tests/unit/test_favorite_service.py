@@ -1,3 +1,4 @@
+import pytest
 from fastapi import HTTPException
 from app.services.favorite_service import FavoriteService
 from app.models.favorite import Favorite

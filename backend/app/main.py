@@ -17,3 +17,7 @@ app.include_router(favorites.router, prefix="/api/v1/favorites", tags=["favorite
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the SkyNet API!"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("app.main:app", reload=True)

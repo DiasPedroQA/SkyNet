@@ -1,0 +1,93 @@
+{
+    // =========================
+    // GLOBAL EDITOR RULES
+    // =========================
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit",
+    },
+    "editor.tabSize": 2,
+    "editor.rulers": [88, 100],
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/.ruff_cache": true,
+        "**/node_modules": true,
+        "**/dist": true,
+    },
+
+    // =========================
+    // PYTHON (FASTAPI)
+    // =========================
+    "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.languageServer": "Pylance",
+
+    // Pytest
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestArgs": ["backend/tests", "-v"],
+
+    // Formatter Python
+    "[python]": {
+        "editor.defaultFormatter": "streetsidesoftware.code-spell-checker-portuguese-brazilian",
+        "editor.tabSize": 4,
+    },
+
+    // Ruff
+    "ruff.enable": true,
+    "ruff.organizeImports": true,
+    "ruff.lint.run": "onSave",
+
+    // =========================
+    // JAVASCRIPT / REACT
+    // =========================
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+    ],
+
+    "eslint.format.enable": true,
+    "eslint.run": "onSave",
+
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+
+    // =========================
+    // PATH ALIAS (se usar vite ou tsconfig paths)
+    // =========================
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "javascript.preferences.importModuleSpecifier": "non-relative",
+
+    // =========================
+    // TERMINAL
+    // =========================
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.scrollback": 10000,
+    "cSpell.words": ["pytest"],
+}
