@@ -1,5 +1,6 @@
 from pydantic import BaseSettings
 
+
 class Settings(BaseSettings):
     # Configurações do banco de dados
     DATABASE_URL: str

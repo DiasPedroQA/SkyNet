@@ -1,5 +1,8 @@
+"""Módulo principal da aplicação FastAPI"""
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 from app.api.v1.routers import favorites
 
 app = FastAPI()
@@ -16,6 +19,7 @@ app.include_router(favorites.router, prefix="/api/v1/favorites", tags=["favorite
 
 @app.get("/")
 def read_root():
+    """Endpoint raiz para verificar se a API está funcionando"""
     return {"message": "Welcome to the SkyNet API!"}
 
 if __name__ == "__main__":

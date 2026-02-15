@@ -44,7 +44,6 @@
     // Ruff
     "ruff.enable": true,
     "ruff.organizeImports": true,
-    "ruff.lint.run": "onSave",
 
     // =========================
     // JAVASCRIPT / REACT
@@ -89,5 +88,28 @@
     // =========================
     "terminal.integrated.defaultProfile.linux": "bash",
     "terminal.integrated.scrollback": 10000,
-    "cSpell.words": ["pytest"],
+    "cSpell.words": [
+        "anyio",
+        "asyncio",
+        "autoflush",
+        "certifi",
+        "dotenv",
+        "fastapi",
+        "github",
+        "httpcore",
+        "httpx",
+        "idna",
+        "iniconfig",
+        "passlib",
+        "pluggy",
+        "pydantic",
+        "Pygments",
+        "pylance",
+        "pytest",
+        "sessionmaker",
+        "sqlalchemy",
+        "starlette",
+        "uvicorn"
+    ],
+    "makefile.configureOnOpen": false,
 }
